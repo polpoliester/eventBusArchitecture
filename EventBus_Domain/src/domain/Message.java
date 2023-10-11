@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public class Message {
 
- private final String content;
-  private final Person sender;
+ private String content;
+  private Person sender;
 
   public Message(String content, Person sender) {
     this.content = content;

@@ -4,3 +4,5 @@
 /target/
 /EventBus/build/
 /EventBus/dist/
+/EventBus/nbproject/private/
+/EventBus_Domain/nbproject/private/

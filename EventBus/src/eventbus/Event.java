@@ -6,6 +6,7 @@ public interface Event {
    */
   String getType();
 
+
   /**
    * La carga útil del evento.
    */
