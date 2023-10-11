@@ -2,3 +2,5 @@
 /build/
 /BusComponent/nbproject/private/
 /target/
+/EventBus/build/
+/EventBus/dist/
