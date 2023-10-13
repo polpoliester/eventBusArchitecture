@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Person {
 
     private final String name;
-    private List<Chat> chats = new ArrayList<>();
+    private Chat chat;
 
     public Person(String name) {
         this.name = name;
@@ -17,16 +17,12 @@ public class Person {
         return name;
     }
 
-    public List<Chat> getChats() {
-        return chats;
+    public Chat getChat() {
+        return chat;
     }
 
-    public void addChat(Chat chat) {
-        chats.add(chat);
-    }
-
-    public void removeChat(Chat chat) {
-        chats.remove(chat);
+    public void setChat(Chat chat) {
+        this.chat = chat;
     }
 
     @Override
@@ -50,7 +46,7 @@ public class Person {
     public String toString() {
         return "Person{"
                 + "name='" + name + '\''
-                + ", chats=" + chats
+                + ", chats=" + chat
                 + '}';
     }
 

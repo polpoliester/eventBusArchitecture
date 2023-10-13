@@ -16,7 +16,7 @@ public class Prueba {
         eventBus.subscribe((IEventListener) listener);
 
         // Publish an event.
-        eventBus.publish("my-event", "Hola mundo!");
+        eventBus.publish("my-event", "Hola mundo!");//ola
     }
 
 }

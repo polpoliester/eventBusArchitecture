@@ -15,5 +15,5 @@ public interface EventListener {
      * @param eventType   A String representing the type of the event.
      * @param eventData   An Object containing data related to the event.
      */
-    void onEvent(String eventType, Object eventData);
+    void onEvent(String eventType, Object eventData);//ola
 }

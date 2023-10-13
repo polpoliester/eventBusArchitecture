@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MessageSystem {
-private final List<Person> persons;
-  private final Chat chat;
+    private List<Person> persons;
+  private Chat chat;
 
   public MessageSystem() {
     this.persons = new ArrayList<>();

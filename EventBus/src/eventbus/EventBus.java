@@ -50,7 +50,7 @@ public class EventBus {
      */
     public void unsubscribe(IEventListener listener) {
         String eventType = listener.getType();
-        List<IEventListener> listeners = listenersByType.get(eventType);
+        List<IEventListener> listeners = listenersByType.get(eventType);//ola
         if (listeners != null) {
             listeners.remove(listener);
         }

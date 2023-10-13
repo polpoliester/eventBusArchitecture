@@ -9,6 +9,6 @@ public class IEventListener implements EventListener {
 
     @Override
     public void onEvent(String eventType, Object eventData) {
-        System.out.println("El oyente ha recibido un evento de tipo " + eventType);
+        System.out.println("El oyente ha recibido un evento de tipo " + eventType);//ola
     }
 }

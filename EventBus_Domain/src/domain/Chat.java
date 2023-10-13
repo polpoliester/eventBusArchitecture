@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Chat {
 
-  private final List<Person> persons;
-  private final List<Message> messages;
+  private List<Person> persons;
+  private List<Message> messages;
 
   public Chat() {
     this.persons = new ArrayList<>();
@@ -15,15 +15,15 @@ public class Chat {
 
  public void addPerson(Person person) {
     persons.add(person);
-    if (person.getChats() != null) {
-      person.getChats().add(this);
+    if (person.getChat() != null) {
+      person.setChat(this);
     }
   }
 
   public void removePerson(Person person) {
     persons.remove(person);
-    if (person.getChats() != null) {
-      person.getChats().remove(this);
+    if (person.getChat() != null) {
+      person.setChat(null);
     }
   }
 
@@ -44,7 +44,7 @@ public class Chat {
 
   @Override
   public String toString() {
-    return "Chat{" +
+    return "Chat{" + 
         "persons=" + persons +
         ", messages=" + messages +
         '}';
