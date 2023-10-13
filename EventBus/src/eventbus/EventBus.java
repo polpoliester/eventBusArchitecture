@@ -7,47 +7,50 @@ import java.util.Map;
 
 public class EventBus {
 
-    private final Map<String, List<EventListener>> listenersByType;
+    private final Map<String, List<IEventListener>> listenersByType;
 
     public EventBus() {
         this.listenersByType = new HashMap<>();
     }
 
     /**
-     * Publica un evento en el bus de eventos.
+     * Publish an event to the event bus.
      *
-     * @param event El evento a publicar.
+     * @param eventType The Name of the event to publish.
+     * @param eventData The event data to publish.
      */
-    public void publish(Event event) {
-        List<EventListener> listeners = listenersByType.get(event.getType());
+    public void publish(String eventType, Object eventData) {
+        List<IEventListener> listeners = listenersByType.get(eventType);
         if (listeners != null) {
-            for (EventListener listener : listeners) {
-                listener.onEvent(event);
+            for (IEventListener listener : listeners) {
+                listener.onEvent(eventType, eventData);
             }
         }
     }
 
     /**
-     * Susscribe un oyente de eventos al bus de eventos.
+     * Subscribes an event listener to the event bus.
      *
-     * @param listener El oyente de eventos a suscribir.
+     * @param listener The event listener to subscribe to.
      */
-    public void subscribe(EventListener listener) {
-        List<EventListener> listeners = listenersByType.get(listener.getType());
+    public void subscribe(IEventListener listener) {
+        String eventType = listener.getType();
+        List<IEventListener> listeners = listenersByType.get(eventType);
         if (listeners == null) {
             listeners = new ArrayList<>();
-            listenersByType.put(listener.getType(), listeners);
+            listenersByType.put(eventType, listeners);
         }
         listeners.add(listener);
     }
 
     /**
-     * Desuscribe un oyente de eventos del bus de eventos.
+     * Unsubscribes an event listener from the event bus.
      *
-     * @param listener El oyente de eventos a desuscribir.
+     * @param listener The event listener to unsubscribe.
      */
-    public void unsubscribe(EventListener listener) {
-        List<EventListener> listeners = listenersByType.get(listener.getType());
+    public void unsubscribe(IEventListener listener) {
+        String eventType = listener.getType();
+        List<IEventListener> listeners = listenersByType.get(eventType);
         if (listeners != null) {
             listeners.remove(listener);
         }

@@ -1,16 +1,19 @@
 package eventbus;
 
 public interface EventListener {
-
-    /**
-     * El tipo de evento al que está suscrito el oyente.
+/**
+     * Gets the type of event.
+     *
+     * @return A String representing the event type.
      */
     String getType();
 
+    
     /**
-     * El método que se llama cuando se produce un evento del tipo al que está
-     * suscrito el oyente.
+     * Handles an event by specifying the event type and associated data.
+     *
+     * @param eventType   A String representing the type of the event.
+     * @param eventData   An Object containing data related to the event.
      */
-    void onEvent(Event event);
+    void onEvent(String eventType, Object eventData);
 }
-//asadasdasd
